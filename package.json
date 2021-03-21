@@ -1,8 +1,8 @@
 {
-  "name": "shipit",
+  "name": "laxmi-pan",
   "version": "0.0.1",
-  "description": "E-Commerce website template",
-  "author": "18chetanpatel@gmail.com",
+  "description": "E-Commerce website",
+  "author": "laxmipanvvn@gmail.com",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -10,10 +10,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "material-design-icons-iconfont": "^5.0.1",
     "vue": "^2.5.2",
+    "vue-axios": "^3.2.4",
     "vue-router": "^3.0.1",
-    "vuetify": "^2.2.14"
+    "vuetify": "^2.2.14",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

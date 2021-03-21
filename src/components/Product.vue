@@ -58,7 +58,6 @@
 
           </div>
 
-        </di>
       </div>
       </div>
       <div class="row">
@@ -130,7 +129,7 @@
                     <v-img
                       class="white--text align-end"
                       height="200px"
-                      :src="require('../assets/img/home/deal1.jpg')"
+                      :src="require('../assets/img/home/main_bg.jpg')"
                     >
                       <v-card-title>Bags & Purses </v-card-title>
                     </v-img>
@@ -371,17 +370,12 @@
                 {
                     text: 'Home',
                     disabled: false,
-                    href: 'breadcrumbs_home',
+                    href: 'home',
                 },
                 {
-                    text: 'Clothing',
+                    text: 'Shopping',
                     disabled: false,
-                    href: 'breadcrumbs_clothing',
-                },
-                {
-                    text: 'T-Shirts',
-                    disabled: true,
-                    href: 'breadcrumbs_shirts',
+                    href: 'shop',
                 },
             ],
             item: 5,
