@@ -28,7 +28,20 @@
                     @click=""
                   >
                     <v-list-item-avatar>
-                      <v-img :src="prod.src"></v-img>
+                      <v-img :src="prod.src">
+                        <template v-slot:placeholder>
+                          <v-row
+                            class="fill-height ma-0"
+                            align="center"
+                            justify="center"
+                          >
+                            <v-progress-circular
+                              indeterminate
+                              color="grey lighten-5"
+                            ></v-progress-circular>
+                          </v-row>
+                        </template>
+                      </v-img>
                     </v-list-item-avatar>
 
                     <v-list-item-content>
@@ -97,7 +110,7 @@
             </template>
           </v-simple-table>
           <div class="text-center">
-            <v-btn class="primary white--text mt-5" outlined @click="proceedToPay">PROCEED TO PAY</v-btn>
+            <v-btn v-model="shoppingCart" :class="(getFinalTotal() !== 0) ? 'primary white--text mt-5' : 'grey white--text mt-5'" :disabled="getFinalTotal === 0" outlined @click="proceedToPay">PROCEED TO PAY</v-btn>
           </div>
         </v-col>
       </v-row>
@@ -273,6 +286,7 @@ export default {
       this.shoppingCart.forEach(x => {
         finalTotal += x.price * x.quantity
       })
+      this.finalTotal = finalTotal
       return finalTotal
     },
 
@@ -367,4 +381,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.theme--light.v-btn.v-btn--disabled, .theme--light.v-btn.v-btn--disabled .v-btn__loading, .theme--light.v-btn.v-btn--disabled .v-icon {
+  color: rgb(255, 255, 255) !important;
+}
+</style>
 

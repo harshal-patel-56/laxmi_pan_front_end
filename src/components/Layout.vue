@@ -19,7 +19,20 @@
       >
         <a href="/" class="white--text" style="text-decoration: none">
           <v-avatar style="margin-right: 10px" :size="35">
-            <v-img :src="info.src" v-model="info.name"></v-img>
+            <v-img :src="info.src" v-model="info.name">
+              <template v-slot:placeholder>
+                <v-row
+                  class="fill-height ma-0"
+                  align="center"
+                  justify="center"
+                >
+                  <v-progress-circular
+                    indeterminate
+                    color="grey lighten-5"
+                  ></v-progress-circular>
+                </v-row>
+              </template>
+            </v-img>
           </v-avatar>
           {{ info.name }}</a>
       </v-toolbar-title>

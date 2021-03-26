@@ -16,7 +16,7 @@ const getters = {
 
 const actions = {
   async login({commit}, credentials) {
-    await axios.post("http://localhost:5000/api/login", credentials, {withCredentials: true}).then(response => {
+    await axios.post("/api/login", credentials, {withCredentials: true}).then(response => {
       // console.log(response.data);
       const data = response.data;
       if (data['message'] === "SUCCESS") {

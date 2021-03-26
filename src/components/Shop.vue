@@ -74,6 +74,18 @@
                     height="200px"
                     :src="pro.src"
                   >
+                    <template v-slot:placeholder>
+                      <v-row
+                        class="fill-height ma-0"
+                        align="center"
+                        justify="center"
+                      >
+                        <v-progress-circular
+                          indeterminate
+                          color="grey lighten-5"
+                        ></v-progress-circular>
+                      </v-row>
+                    </template>
                     <v-expand-transition>
                       <div
                         v-if="hover"
@@ -86,7 +98,9 @@
                     </v-expand-transition>
                   </v-img>
                   <v-card-text class="text--primary">
-                    <div><a href="/product/1" style="text-decoration: none">{{ pro.name }}</a></div>
+                    <div>
+                      <router-link to="/product/1" style="text-decoration: none">{{ pro.name }}</router-link>
+                    </div>
                     <div>₹ {{ pro.price }}</div>
                   </v-card-text>
                 </v-card>
@@ -100,13 +114,13 @@
             >
               {{ snackbarText }}
 
-                <v-btn
-                  color="red"
-                  text
-                  @click="snackbar = false"
-                >
-                  Close
-                </v-btn>
+              <v-btn
+                color="red"
+                text
+                @click="snackbar = false"
+              >
+                Close
+              </v-btn>
             </v-snackbar>
           </div>
         </div>

@@ -82,7 +82,7 @@
                   Amount
                 </v-list-item-title>
                 <v-list-item-subtitle> ₹ {{
-                    '100'
+                    order.amount
                   }}
                 </v-list-item-subtitle>
               </v-list-item>
